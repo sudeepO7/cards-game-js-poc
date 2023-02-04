@@ -1,12 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 :root{
     --card-width: 117px;
     --card-height: 180px;
     --num-cards: 4;
     --card-horizontal-space: 100px;
+
+    --badge-bg-color: darkgrey;
+    --primary-color: black;
+    --secondary-color: #fff;
+
+    --primary-font: 'Quicksand', sans-serif;
 }
 
 body {
     height: 100vh;
+    font-family: var(--primary-font);
 }
 
 main {
@@ -87,4 +96,102 @@ main {
 
 .card-inner.flip-it {
     transform: rotateY(180deg);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.header-title-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header-round-info-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header-status-info-container,
+.header-button-container,
+.header-score-container,
+.header-round-container,
+.header-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-score-container,
+.header-round-container,
+.header-img-container {
+    width: 150px;
+}
+
+.header-img {
+    height: 55px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0.2);
+    transform: rotate(-3deg);
+}
+
+.badge {
+    background-color: var(--badge-bg-color);
+    color: var(--secondary-color);
+    padding: 2px 10px 3px;
+    border-radius: 15px;
+}
+
+/* CSS */
+.play-game {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 45px;
+    min-width: 0;
+    outline: none;
+    padding: 15px 21px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    will-change: transform;
+}
+
+.play-game:disabled {
+  pointer-events: none;
+}
+
+.play-game:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.play-game:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.current-status {
+    font-size: 1.3rem;
+    text-align: center;
 }
