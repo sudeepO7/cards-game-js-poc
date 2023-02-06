@@ -63,6 +63,7 @@ main {
     width: var(--card-width);
     perspective: 1000px;
     cursor: pointer;
+    transition: transform 0.6s ease-in-out;
 }
 
 .card-inner {
@@ -155,7 +156,7 @@ header {
     box-sizing: border-box;
     color: #3B3B3B;
     cursor: pointer;
-    display: inline-block;
+    display: none;
     font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     font-size: 12px;
     font-weight: 600;
@@ -173,6 +174,7 @@ header {
     touch-action: manipulation;
     width: 100%;
     will-change: transform;
+    animation: game-play-button-fade-in 10s 1;
 }
 
 .play-game:disabled {
@@ -186,6 +188,11 @@ header {
   transform: translateY(-2px);
 }
 
+.game-play-button-container {
+    width: 150px;
+    height: 50px;
+}
+
 .play-game:active {
   box-shadow: none;
   transform: translateY(0);
@@ -194,4 +201,21 @@ header {
 .current-status {
     font-size: 1.3rem;
     text-align: center;
+}
+
+.card.shuffle-left {
+    transform: translateX(200px) translateY(35px);
+}
+
+.card.shuffle-right {
+    transform: translateX(-220px) translateY(-35px);
+}
+
+.card.fly-in {
+    transform: translateY(-1000px) translateX(-600px) rotate(45deg);
+}
+
+@keyframes game-play-button-fade-in {
+    from{opacity: 0;}
+    to{opacity: 1;}
 }
